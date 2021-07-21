@@ -15,9 +15,11 @@ import java.util.logging.Logger;
  */
 public class Universidade {
     private String nome;
-    private DataBaseDepartamento dbd = new DataBaseDepartamento();
+    private static DataBaseDepartamento dbd = new DataBaseDepartamento();
+
     
     public Universidade(String nome){
+        this.dbd = DataBaseDepartamento.getInstance();
         this.nome = nome;
     }
     
@@ -35,14 +37,14 @@ public class Universidade {
         }
         return relatorio;
     }
+   
+    public Funcionario getFuncionario(String codigoDep, String codigoFun){
+        Departamento dep = dbd.buscarDepartamento(codigoDep);
+        return dep.getFuncionarioCod(codigoFun);
+    }
     
-    public boolean hasDepartamento(String codigo){ 
-        int cont = dbd.getNumDepartamentos();
-        Departamento departamentos[] = dbd.getDepartamentos();
-        for(int i = 0; i < cont; i++){
-            if(codigo.equals(departamentos[i].getCodigo())) return true; 
-        }
-        return false;
+    public Departamento[] getDep(){
+        return dbd.getDepartamentos();
     }
     
     public String dadosDepartamentosFaixaSalarial(double salarioInicial, double salarioFinal){
@@ -62,11 +64,7 @@ public class Universidade {
     public Departamento buscarDepartamento(String codigo){
         Departamento depto = dbd.buscarDepartamento(codigo);
         if (depto != null) {
-            try {
-                return depto.clone();
-            } catch (CloneNotSupportedException ex) {
-                Logger.getLogger(Universidade.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            return depto;
         }
         return null;
     }

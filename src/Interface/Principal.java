@@ -15,5 +15,6 @@ public class Principal {
         home.toFront();
         home.setResizable(false);
         home.getContentPane().setBackground(Color.white);
+        home.setLocationRelativeTo(null);
     }
 }

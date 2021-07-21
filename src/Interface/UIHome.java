@@ -28,7 +28,7 @@ public class UIHome extends javax.swing.JFrame {
         MenuDep = new javax.swing.JMenu();
         MenuAddDep = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        MenuAddEfetivo = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -65,14 +65,14 @@ public class UIHome extends javax.swing.JFrame {
         jMenu2.setText("Cadastrar Funcionário");
         jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem1.setText("Efetivo");
-        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        MenuAddEfetivo.setText("Efetivo");
+        MenuAddEfetivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MenuAddEfetivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MenuAddEfetivoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(MenuAddEfetivo);
 
         jMenuItem2.setText("Técnico");
         jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -150,13 +150,17 @@ public class UIHome extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void MenuAddEfetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddEfetivoActionPerformed
+        UICadastroEfetivo CadastroEfetivo = new UICadastroEfetivo(this, true);
+        CadastroEfetivo.setLocationRelativeTo(null);
+        CadastroEfetivo.setVisible(true);
+        CadastroEfetivo.setResizable(false);
+    }//GEN-LAST:event_MenuAddEfetivoActionPerformed
 
     private void MenuAddDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddDepActionPerformed
         // TODO add your handling code here:
         UICadastroDep CadastroDep = new UICadastroDep(this, true);
+        CadastroDep.setLocationRelativeTo(null);
         CadastroDep.setVisible(true);
         CadastroDep.setResizable(false);
     }//GEN-LAST:event_MenuAddDepActionPerformed
@@ -198,13 +202,13 @@ public class UIHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuAddDep;
+    private javax.swing.JMenuItem MenuAddEfetivo;
     private javax.swing.JMenu MenuDep;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

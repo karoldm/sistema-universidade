@@ -6,6 +6,8 @@
 package Interface;
 
 import Controlador.Controlador;
+import Interface.Utils.Utils;
+import Modelo.Departamento;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -50,6 +52,14 @@ public class UICadastroDep extends javax.swing.JDialog {
         TextFieldNome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         TextFieldCodigo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        TextFieldCodigo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                TextFieldCodigoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                TextFieldCodigoFocusLost(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Código do Departamento");
@@ -118,14 +128,10 @@ public class UICadastroDep extends javax.swing.JDialog {
         // TODO add your handling code here:
         String codigo = TextFieldCodigo.getText();
         String nome = TextFieldNome.getText();
-        if("".equals(codigo) || "".equals(nome)){
+        String[] values = {codigo, nome};
+        if(Utils.hasNull(values)){
             JOptionPane.showMessageDialog(this, "Todos os campos precisam ser preenchidos!", 
                     "Atenção", JOptionPane.WARNING_MESSAGE);
-        }
-        else if(controller.hasDepartamento(codigo)){
-            LabelCadastro.setForeground(Color.red);
-            LabelCadastro.setText("Departamento já cadastrado!");
-            LabelCadastro.setVisible(true);
         }
         else {
             controller.addDepartamento(codigo, nome);
@@ -137,6 +143,25 @@ public class UICadastroDep extends javax.swing.JDialog {
         TextFieldCodigo.setText("");
         TextFieldNome.setText("");
     }//GEN-LAST:event_ButtonCadastroActionPerformed
+
+    private void TextFieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusLost
+        // TODO add your handling code here:
+        String codigo = TextFieldCodigo.getText();
+        Departamento dep = controller.buscarDepartamento(codigo);
+        if(dep != null){
+            LabelCadastro.setForeground(Color.red);
+            LabelCadastro.setText("Departamento já cadastrado!");
+            LabelCadastro.setVisible(true);
+            TextFieldNome.setText(dep.getNome());
+            ButtonCadastro.setEnabled(false);
+        }
+    }//GEN-LAST:event_TextFieldCodigoFocusLost
+
+    private void TextFieldCodigoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusGained
+        // TODO add your handling code here:
+        TextFieldCodigo.setText("");
+        ButtonCadastro.setEnabled(true);
+    }//GEN-LAST:event_TextFieldCodigoFocusGained
 
     /**
      * @param args the command line arguments

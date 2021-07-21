@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Departamento;
+import Modelo.Funcionario;
 import Modelo.Universidade;
 
 /**
@@ -17,6 +18,10 @@ public class Controlador {
     
     public void addDepartamento(String codigo, String nome){
         universidade.addDepartamento(codigo, nome);
+    }
+    
+    public Departamento[] getDep(){
+        return universidade.getDep();
     }
     
     public void addTecnico(String codigo, String nome, double salario, String nivel, String funcao, String codigoDepartamento){
@@ -39,9 +44,14 @@ public class Controlador {
     }
    
      
-   public boolean hasDepartamento(String codigo){
-        return universidade.hasDepartamento(codigo);
+   public Departamento buscarDepartamento(String codigo){
+        return universidade.buscarDepartamento(codigo);
     }
+   
+   public Funcionario getFuncionario(String codigoDep, String codigoFun){
+       return universidade.getFuncionario(codigoDep, codigoFun);
+   }
+  
     
     public String dadosDepartamentosFaixaSalarial(double salarioInicial, double salarioFinal){
         return universidade.dadosDepartamentosFaixaSalarial(salarioInicial, salarioFinal);

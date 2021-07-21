@@ -14,11 +14,17 @@ import Armazenamento.DataBaseFuncionario;
 public class Departamento {
     private String codigo;
     private String nome;
-    private DataBaseFuncionario dbf = new DataBaseFuncionario();
+    private static DataBaseFuncionario dbf = new DataBaseFuncionario();
             
     public Departamento(String codigo, String nome){
         this.codigo = codigo;
         this.nome = nome;
+        this.dbf = DataBaseFuncionario.getInstance();
+    }
+    
+    public Funcionario getFuncionarioCod(String codigo){
+        Funcionario F = dbf.buscarFuncionarioCodigo(codigo);
+        return F;
     }
     
     public String dados(){

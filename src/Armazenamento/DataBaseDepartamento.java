@@ -11,14 +11,23 @@ import Modelo.Departamento;
  *
  * @author Felipe de Freitas
  */
-public class DataBaseDepartamento {
+public final class DataBaseDepartamento {
     private Departamento departamentos[];
     private int MAX = 100;
     private int cont;
+    private static DataBaseDepartamento instance;
     
     public DataBaseDepartamento(){
         departamentos = new Departamento[MAX];
-        cont =0;
+        cont = 0;
+        this.instance = null;
+    }
+    
+    public static DataBaseDepartamento getInstance(){
+        if (instance == null){
+            instance = new DataBaseDepartamento();
+        }
+        return instance;
     }
     
     public Departamento[] getDepartamentos(){

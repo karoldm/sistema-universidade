@@ -11,14 +11,23 @@ import Modelo.Funcionario;
  *
  * @author Felipe de Freitas
  */
-public class DataBaseFuncionario {
+public final class DataBaseFuncionario {
     private Funcionario funcionarios[];
     private int MAX = 100;
     private int cont;
+    private static DataBaseFuncionario instance;
     
     public DataBaseFuncionario(){
         funcionarios = new Funcionario[MAX];
         cont = 0;
+        this.instance = null;
+    }
+    
+    public static DataBaseFuncionario getInstance(){
+        if (instance == null){
+            instance = new DataBaseFuncionario();
+        }
+        return instance;
     }
     
     public Funcionario[] getFuncionarios(){
