@@ -31,6 +31,18 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
                 ComboBoxDep.addItem(Dep[i].getNome());
             }
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Nnenhum departamento cadastrado! "
+                    + "Para continuar cadastre um departamento primeiro", "Atenção", JOptionPane.ERROR_MESSAGE);
+            TextFieldCodigo.setEnabled(false);
+            TextFieldNome.setEnabled(false);
+            TextFieldSalario.setEnabled(false);
+            TextFieldTitulacao.setEnabled(false);
+            TextFieldArea.setEnabled(false);
+            ComboBoxDep.setEnabled(false);
+            ComboBoxNivel.setEnabled(false);
+            ButtonCadastro.setEnabled(false);
+        }
                 
     }
 
@@ -287,6 +299,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             TextFieldSalario.setText(Float.toString((float) E.getSalario()));
             TextFieldTitulacao.setText(E.getTitulacao());
             TextFieldArea.setText(E.getArea());
+            ComboBoxNivel.getModel().setSelectedItem(E.getNivel());
             ButtonCadastro.setEnabled(false);
         }
     }//GEN-LAST:event_TextFieldCodigoFocusLost

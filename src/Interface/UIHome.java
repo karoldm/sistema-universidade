@@ -30,7 +30,7 @@ public class UIHome extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         MenuAddEfetivo = new javax.swing.JMenuItem();
         MenuAddTecnico = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MenuAddSub = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -83,9 +83,14 @@ public class UIHome extends javax.swing.JFrame {
         });
         jMenu2.add(MenuAddTecnico);
 
-        jMenuItem3.setText("Substituto");
-        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu2.add(jMenuItem3);
+        MenuAddSub.setText("Substituto");
+        MenuAddSub.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MenuAddSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAddSubActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuAddSub);
 
         jMenuBar1.add(jMenu2);
 
@@ -178,6 +183,13 @@ public class UIHome extends javax.swing.JFrame {
         CadastroTec.setVisible(true);
     }//GEN-LAST:event_MenuAddTecnicoActionPerformed
 
+    private void MenuAddSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddSubActionPerformed
+        // TODO add your handling code here:
+        UICadastroSub CadastroSub = new UICadastroSub(this, true);
+        CadastroSub.setLocationRelativeTo(null);
+        CadastroSub.setVisible(true);
+    }//GEN-LAST:event_MenuAddSubActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +228,7 @@ public class UIHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuAddDep;
     private javax.swing.JMenuItem MenuAddEfetivo;
+    private javax.swing.JMenuItem MenuAddSub;
     private javax.swing.JMenuItem MenuAddTecnico;
     private javax.swing.JMenu MenuDep;
     private javax.swing.JLabel jLabel1;
@@ -223,7 +236,6 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

@@ -31,6 +31,17 @@ public class UICadastroTecnico extends javax.swing.JDialog {
                 ComboBoxDep.addItem(Dep[i].getNome());
             }
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Nnenhum departamento cadastrado! "
+                    + "Para continuar cadastre um departamento primeiro", "Atenção", JOptionPane.ERROR_MESSAGE);
+            TextFieldCodigo.setEnabled(false);
+            TextFieldNome.setEnabled(false);
+            TextFieldSalario.setEnabled(false);
+            TextFieldFuncao.setEnabled(false);
+            ComboBoxDep.setEnabled(false);
+            ComboBoxNivel.setEnabled(false);
+            ButtonCadastro.setEnabled(false);
+        }
     }
 
     /**
