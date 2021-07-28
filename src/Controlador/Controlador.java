@@ -14,7 +14,7 @@ import Modelo.Universidade;
  * @author Felipe de Freitas
  */
 public class Controlador {
-    private Universidade universidade = new Universidade("Universidade Unesp");
+    private final Universidade universidade = new Universidade("Universidade Unesp");
     
     public void addDepartamento(String codigo, String nome){
         universidade.addDepartamento(codigo, nome);
@@ -49,8 +49,11 @@ public class Controlador {
     }
    
    public Funcionario getFuncionario(String codigoDep, String codigoFun){
-       return universidade.getFuncionario(codigoDep, codigoFun);
-   }
+       if(codigoDep != null){   
+        return universidade.getFuncionario(codigoDep, codigoFun);
+       }
+       return null;
+    }
   
     
     public String dadosDepartamentosFaixaSalarial(double salarioInicial, double salarioFinal){

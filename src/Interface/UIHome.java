@@ -29,7 +29,7 @@ public class UIHome extends javax.swing.JFrame {
         MenuAddDep = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuAddEfetivo = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuAddTecnico = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -74,9 +74,14 @@ public class UIHome extends javax.swing.JFrame {
         });
         jMenu2.add(MenuAddEfetivo);
 
-        jMenuItem2.setText("Técnico");
-        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu2.add(jMenuItem2);
+        MenuAddTecnico.setText("Técnico");
+        MenuAddTecnico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MenuAddTecnico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAddTecnicoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(MenuAddTecnico);
 
         jMenuItem3.setText("Substituto");
         jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,7 +131,10 @@ public class UIHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +162,6 @@ public class UIHome extends javax.swing.JFrame {
         UICadastroEfetivo CadastroEfetivo = new UICadastroEfetivo(this, true);
         CadastroEfetivo.setLocationRelativeTo(null);
         CadastroEfetivo.setVisible(true);
-        CadastroEfetivo.setResizable(false);
     }//GEN-LAST:event_MenuAddEfetivoActionPerformed
 
     private void MenuAddDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddDepActionPerformed
@@ -162,8 +169,14 @@ public class UIHome extends javax.swing.JFrame {
         UICadastroDep CadastroDep = new UICadastroDep(this, true);
         CadastroDep.setLocationRelativeTo(null);
         CadastroDep.setVisible(true);
-        CadastroDep.setResizable(false);
     }//GEN-LAST:event_MenuAddDepActionPerformed
+
+    private void MenuAddTecnicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddTecnicoActionPerformed
+        // TODO add your handling code here:
+        UICadastroTecnico CadastroTec = new UICadastroTecnico(this, true);
+        CadastroTec.setLocationRelativeTo(null);
+        CadastroTec.setVisible(true);
+    }//GEN-LAST:event_MenuAddTecnicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,13 +216,13 @@ public class UIHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuAddDep;
     private javax.swing.JMenuItem MenuAddEfetivo;
+    private javax.swing.JMenuItem MenuAddTecnico;
     private javax.swing.JMenu MenuDep;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

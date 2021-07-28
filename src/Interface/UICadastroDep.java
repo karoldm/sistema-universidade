@@ -8,8 +8,6 @@ package Interface;
 import Controlador.Controlador;
 import Interface.Utils.Utils;
 import Modelo.Departamento;
-import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -48,6 +46,7 @@ public class UICadastroDep extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Departamento");
+        setResizable(false);
 
         TextFieldNome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -67,8 +66,9 @@ public class UICadastroDep extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Nome do Departamento");
 
-        LabelCadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        LabelCadastro.setText("Departamento cadastrado com sucesso !");
+        LabelCadastro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelCadastro.setForeground(new java.awt.Color(255, 0, 0));
+        LabelCadastro.setText("Ops! Departamento já cadastrado!");
 
         ButtonCadastro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ButtonCadastro.setText("Cadastrar");
@@ -86,15 +86,19 @@ public class UICadastroDep extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(ButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(TextFieldNome)
-                        .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LabelCadastro))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(ButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(TextFieldNome)
+                                .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(LabelCadastro)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -135,10 +139,8 @@ public class UICadastroDep extends javax.swing.JDialog {
         }
         else {
             controller.addDepartamento(codigo, nome);
-            LabelCadastro.setForeground(Color.GREEN);
-            LabelCadastro.setText("Departamento cadastrado com sucesso!");
-            LabelCadastro.setVisible(true);
-            System.out.println(codigo);
+            JOptionPane.showMessageDialog(this, "Departamento cadastrado com sucesso!",
+                "Cadastrado", JOptionPane.INFORMATION_MESSAGE);
         }
         TextFieldCodigo.setText("");
         TextFieldNome.setText("");
@@ -149,8 +151,6 @@ public class UICadastroDep extends javax.swing.JDialog {
         String codigo = TextFieldCodigo.getText();
         Departamento dep = controller.buscarDepartamento(codigo);
         if(dep != null){
-            LabelCadastro.setForeground(Color.red);
-            LabelCadastro.setText("Departamento já cadastrado!");
             LabelCadastro.setVisible(true);
             TextFieldNome.setText(dep.getNome());
             ButtonCadastro.setEnabled(false);
@@ -161,6 +161,7 @@ public class UICadastroDep extends javax.swing.JDialog {
         // TODO add your handling code here:
         TextFieldCodigo.setText("");
         ButtonCadastro.setEnabled(true);
+        LabelCadastro.setVisible(false);
     }//GEN-LAST:event_TextFieldCodigoFocusGained
 
     /**
