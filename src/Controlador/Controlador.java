@@ -48,13 +48,16 @@ public class Controlador {
         return universidade.buscarDepartamento(codigo);
     }
    
+   public Departamento buscarDepartamentoNome(String nome){
+        return universidade.buscarDepartamentoNome(nome);
+    }
+   
    public Funcionario getFuncionario(String codigoDep, String codigoFun){
        if(codigoDep != null){   
         return universidade.getFuncionario(codigoDep, codigoFun);
        }
        return null;
     }
-  
     
     public String dadosDepartamentosFaixaSalarial(double salarioInicial, double salarioFinal){
         return universidade.dadosDepartamentosFaixaSalarial(salarioInicial, salarioFinal);

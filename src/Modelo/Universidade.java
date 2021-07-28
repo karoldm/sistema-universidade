@@ -6,8 +6,6 @@
 package Modelo;
 
 import Armazenamento.DataBaseDepartamento;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -63,6 +61,14 @@ public class Universidade {
     
     public Departamento buscarDepartamento(String codigo){
         Departamento depto = dbd.buscarDepartamento(codigo);
+        if (depto != null) {
+            return depto;
+        }
+        return null;
+    }
+    
+    public Departamento buscarDepartamentoNome(String nome){
+        Departamento depto = dbd.buscarDepartamentoNome(nome);
         if (depto != null) {
             return depto;
         }

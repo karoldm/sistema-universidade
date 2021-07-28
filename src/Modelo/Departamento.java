@@ -79,4 +79,5 @@ public class Departamento {
     public void addEfetivo(String codigo, String nome, double salario, String nivel, String titulacao, int cargaHoraria) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+   
 }

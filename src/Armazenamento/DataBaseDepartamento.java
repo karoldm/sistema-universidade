@@ -53,4 +53,13 @@ public final class DataBaseDepartamento {
         }
         return null;
     }
+    
+    public Departamento buscarDepartamentoNome(String nome) {
+        for (int i = 0; i < cont; i++) {
+            if (departamentos[i].getNome().equals(nome)) {
+                return departamentos[i];
+            }
+        }
+        return null;
+    }
 }

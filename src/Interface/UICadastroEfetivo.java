@@ -28,7 +28,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         Departamento[] Dep = controller.getDep();
         if(Dep[0] != null){   
             for (int i = 0; Dep[i] != null; i++) {
-                ComboBoxDep.addItem(Dep[i].getCodigo());
+                ComboBoxDep.addItem(Dep[i].getNome());
             }
         }
                 
@@ -234,7 +234,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         String titulacao = TextFieldTitulacao.getText();
         String area = TextFieldArea.getText();
         String nivel = (String)ComboBoxNivel.getSelectedItem();
-        String dep = (String)ComboBoxDep.getSelectedItem();
+        String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
         String[] values = {codigo, nome, salario, titulacao, area, dep};
         if(Utils.hasNull(values)){
             JOptionPane.showMessageDialog(this, "Todos os campos precisam ser preenchidos!",
@@ -278,7 +278,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
     private void TextFieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusLost
         // TODO add your handling code here:
         String codigo = TextFieldCodigo.getText();
-        String dep = (String)ComboBoxDep.getSelectedItem();
+        String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
         Efetivo E = (Efetivo)controller.getFuncionario(dep, codigo);
         if(E != null){
             LabelCadastro.setVisible(true);
