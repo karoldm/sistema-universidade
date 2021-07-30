@@ -72,7 +72,7 @@ public class UICadastroSub extends javax.swing.JDialog {
         TextFieldSalario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro Duncionário Técnico");
+        setTitle("Cadastro Funcionário Técnico");
         setIconImage(null);
         setPreferredSize(new java.awt.Dimension(403, 347));
         setResizable(false);
@@ -290,7 +290,7 @@ public class UICadastroSub extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Formato inválido para carga horária! "
                     + "Introduza um valor númerico.",
                 "Atenção", JOptionPane.WARNING_MESSAGE);
-            TextFieldSalario.setText("");
+            TextFieldCH.setText("");
         }
         else{
             controller.addSubstituto(codigo, nome, Double.parseDouble(salario), nivel, titulacao, Integer.parseInt(CH), dep);
@@ -298,7 +298,8 @@ public class UICadastroSub extends javax.swing.JDialog {
             TextFieldNome.setText("");
             TextFieldSalario.setText("");
             TextFieldTitulacao.setText("");
-            JOptionPane.showConfirmDialog(this, "Docente cadastrado com sucesso!",
+            TextFieldCH.setText("");
+            JOptionPane.showMessageDialog(this, "Docente cadastrado com sucesso!",
                 "Cadastrado", JOptionPane.INFORMATION_MESSAGE);
         }
 
