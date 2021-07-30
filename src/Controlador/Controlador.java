@@ -43,6 +43,9 @@ public class Controlador {
         return universidade.dadosTodosDepartamentos();
     }
    
+    public String dadosTodosFuncionarios(){
+        return universidade.dadosTodosFuncionarios();
+    }
      
    public Departamento buscarDepartamento(String codigo){
         return universidade.buscarDepartamento(codigo);

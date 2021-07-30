@@ -66,7 +66,7 @@ public final class DataBaseFuncionario {
     public double calcularSalarioTotal(){
         double total = 0;
         for (int i = 0; i < cont; i++) {
-            total = funcionarios[i].calcularSalario();
+            total += funcionarios[i].calcularSalario();
         }
         return total;
     }

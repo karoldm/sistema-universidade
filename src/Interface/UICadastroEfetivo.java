@@ -9,6 +9,7 @@ import Controlador.Controlador;
 import Interface.Utils.Utils;
 import Modelo.Departamento;
 import Modelo.Efetivo;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,7 +43,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             ComboBoxDep.setEnabled(false);
             ComboBoxNivel.setEnabled(false);
             ButtonCadastro.setEnabled(false);
-        }
+        }       
                 
     }
 

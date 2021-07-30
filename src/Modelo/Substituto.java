@@ -31,6 +31,15 @@ public class Substituto extends Docente{
         }
         return salario;
     }
+    
+    @Override
+    public String dadosFuncionario(){
+        String dados = "\nNome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+                + "\nTitulação: "+ titulacao + "\nCarga horário: "+ cargaHoraria+"\n\n";   
+        return dados;
+    }
+
+    
 
     public int getCargaHoraria() {
         return cargaHoraria;
@@ -39,5 +48,7 @@ public class Substituto extends Docente{
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
-    
+
+
+
 }

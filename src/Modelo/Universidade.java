@@ -6,6 +6,7 @@
 package Modelo;
 
 import Armazenamento.DataBaseDepartamento;
+import Armazenamento.DataBaseFuncionario;
 
 /**
  *
@@ -35,7 +36,19 @@ public class Universidade {
         }
         return relatorio;
     }
+    
+    public String dadosTodosFuncionarios(){
+        String relatorio = "";
+        Departamento departamentos[] = dbd.getDepartamentos();
+        int cont = dbd.getNumDepartamentos();
+        for(int i = 0; i < cont; i++){
+            relatorio = relatorio + departamentos[i].dadosTodosFuncionarios();
+        }
+  
+        return relatorio;
+    }
    
+  
     public Funcionario getFuncionario(String codigoDep, String codigoFun){
         Departamento dep = dbd.buscarDepartamento(codigoDep);
         return dep.getFuncionarioCod(codigoFun);

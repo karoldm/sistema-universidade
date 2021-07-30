@@ -26,6 +26,8 @@ public abstract class Funcionario {
     }
     
     public abstract double calcularSalario();
+    
+    public abstract String dadosFuncionario();
 
     public String getCodigo() {
         return codigo;

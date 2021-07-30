@@ -14,7 +14,7 @@ import Armazenamento.DataBaseFuncionario;
 public class Departamento {
     private String codigo;
     private String nome;
-    private static DataBaseFuncionario dbf = new DataBaseFuncionario();
+    private DataBaseFuncionario dbf = new DataBaseFuncionario();
             
     public Departamento(String codigo, String nome){
         this.codigo = codigo;
@@ -34,6 +34,17 @@ public class Departamento {
                     + "\nGasto total com funcionários: " + totalGasto + "\n";
         return dados;
     }
+    
+    public String dadosTodosFuncionarios(){
+        String relatorio = "";
+        Funcionario funcionarios[] = dbf.getFuncionarios();
+        int cont = dbf.getNumFuncionarios();
+        for(int i = 0; i < cont; i++){
+            relatorio = relatorio + funcionarios[i].dadosFuncionario();
+        }
+        return relatorio;
+    }
+   
     
     public double gastoTotal() {
         return dbf.calcularSalarioTotal();

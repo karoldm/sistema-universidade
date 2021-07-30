@@ -32,6 +32,14 @@ public class Tecnico extends Funcionario{
         return salario;
     }
     
+    @Override
+    public String dadosFuncionario(){
+        String dados = "\nNome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+                + "\nFunção: " + funcao+"\n\n";
+        
+        return dados;
+    }
+   
     public String getFuncao() {
         return funcao;
     }
@@ -39,5 +47,5 @@ public class Tecnico extends Funcionario{
     public void setFuncao(String funcao) {
         this.funcao = funcao;
     }
-    
+     
 }

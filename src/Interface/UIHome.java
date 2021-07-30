@@ -1,12 +1,16 @@
 
 package Interface;
 
+import Controlador.Controlador;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author karol
  */
 public class UIHome extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form UIHome
      */
@@ -40,6 +44,7 @@ public class UIHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setIconImages(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interface/images/imageBackground.jpeg"))); // NOI18N
 
@@ -108,6 +113,11 @@ public class UIHome extends javax.swing.JFrame {
 
         jMenuItem5.setText("Funcionários");
         jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
 
         jMenuBar1.add(jMenu3);
@@ -137,9 +147,8 @@ public class UIHome extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,6 +169,9 @@ public class UIHome extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        UIRelatorio relatorio = new UIRelatorio(this, false);
+        Controlador control = new Controlador();
+        relatorio.exibir("Relatório Departamentos", "Relatório Departamentos ", control.dadosTodosDepartamentos());
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -189,6 +201,14 @@ public class UIHome extends javax.swing.JFrame {
         CadastroSub.setLocationRelativeTo(null);
         CadastroSub.setVisible(true);
     }//GEN-LAST:event_MenuAddSubActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        UIRelatorio relatorio = new UIRelatorio(this, false);
+        Controlador control = new Controlador();
+        relatorio.exibir("Relatório Funcionarios", "Relatório Funcionarios ", control.dadosTodosFuncionarios());
+    
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -73,6 +73,7 @@ public class UICadastroSub extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro Duncionário Técnico");
+        setIconImage(null);
         setPreferredSize(new java.awt.Dimension(403, 347));
         setResizable(false);
 
