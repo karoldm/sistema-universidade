@@ -39,7 +39,7 @@ public class Efetivo extends Docente{
 
     @Override
     public String dadosFuncionario(){
-        String dados = "\nNome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+        String dados = "Nome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
                 + "\nTitulação: "+ titulacao + "\nÁrea: "+ area+"\n\n";
         
         return dados;

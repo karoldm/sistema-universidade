@@ -90,11 +90,14 @@ public class Universidade {
     }
     
     public Funcionario buscarFuncionarioCodigo(String codigo){
+        Funcionario funcionario;
         Departamento departamentos[] = dbd.getDepartamentos();
         int cont = dbd.getNumDepartamentos();
         for(int i = 0; i < cont; i++){
-            Funcionario funcionario = departamentos[i].buscarFuncionarioCodigo(codigo);   
-            return funcionario;
+            funcionario = departamentos[i].buscarFuncionarioCodigo(codigo);   
+            if(funcionario != null) {
+                return funcionario;
+            }
         }
         return null;
     }

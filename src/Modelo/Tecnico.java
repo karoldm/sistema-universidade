@@ -34,7 +34,7 @@ public class Tecnico extends Funcionario{
     
     @Override
     public String dadosFuncionario(){
-        String dados = "\nNome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+        String dados = "Nome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
                 + "\nFunção: " + funcao+"\n\n";
         
         return dados;

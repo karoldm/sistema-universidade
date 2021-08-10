@@ -33,7 +33,7 @@ public class Substituto extends Docente{
     
     @Override
     public String dadosFuncionario(){
-        String dados = "\nNome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+        String dados = "Nome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
                 + "\nTitulação: "+ titulacao + "\nCarga horário: "+ cargaHoraria+"\n\n";   
         return dados;
     }
