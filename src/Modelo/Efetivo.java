@@ -19,10 +19,11 @@ public class Efetivo extends Docente{
     public Efetivo(String codigo, String nome, double salario, String nivel, String titulacao, String area){
         super(codigo, nome, salario, nivel, titulacao);
         this.area = area;
+
     }
     
     @Override
-    public double calcularSalario(){
+    public void calcularSalario(){
         //Salario do efetivo * constante + 5%
         if (nivel.equals("D1")){
             salario = salario*Constantes.D1*1.05;
@@ -33,7 +34,7 @@ public class Efetivo extends Docente{
         else{
             salario = salario*Constantes.D3*1.05;
         }
-        return salario;
+  
     }
 
     @Override

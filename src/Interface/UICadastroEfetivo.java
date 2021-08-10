@@ -9,7 +9,10 @@ import Controlador.Controlador;
 import Interface.Utils.Utils;
 import Modelo.Departamento;
 import Modelo.Efetivo;
-import javax.swing.ImageIcon;
+import Modelo.Funcionario;
+import Modelo.Substituto;
+import Modelo.Tecnico;
+import java.awt.Dimension;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +20,9 @@ import javax.swing.JOptionPane;
  * @author karol
  */
 public class UICadastroEfetivo extends javax.swing.JDialog {
+
     Controlador controller;
+
     /**
      * Creates new form UICadastroEfetivo
      */
@@ -27,12 +32,11 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         controller = new Controlador();
         LabelCadastro.setVisible(false);
         Departamento[] Dep = controller.getDep();
-        if(Dep[0] != null){   
+        if (Dep[0] != null) {
             for (int i = 0; Dep[i] != null; i++) {
                 ComboBoxDep.addItem(Dep[i].getNome());
             }
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Nnenhum departamento cadastrado! "
                     + "Para continuar cadastre um departamento primeiro", "Atenção", JOptionPane.ERROR_MESSAGE);
             TextFieldCodigo.setEnabled(false);
@@ -43,8 +47,8 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             ComboBoxDep.setEnabled(false);
             ComboBoxNivel.setEnabled(false);
             ButtonCadastro.setEnabled(false);
-        }       
-                
+        }
+
     }
 
     /**
@@ -60,17 +64,17 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         TextFieldNome = new javax.swing.JTextField();
         TextFieldCodigo = new javax.swing.JTextField();
         ButtonCadastro = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        LabelCod = new javax.swing.JLabel();
+        LabelNome = new javax.swing.JLabel();
         TextFieldTitulacao = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        LabelSalario = new javax.swing.JLabel();
+        LabelNivel = new javax.swing.JLabel();
         ComboBoxNivel = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
+        LabelTitulacao = new javax.swing.JLabel();
         TextFieldSalario = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
+        LabelArea = new javax.swing.JLabel();
         TextFieldArea = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        LabelDep = new javax.swing.JLabel();
         ComboBoxDep = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -79,7 +83,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
 
         LabelCadastro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LabelCadastro.setForeground(new java.awt.Color(255, 0, 0));
-        LabelCadastro.setText("Ops! Docente já cadastrado!");
+        LabelCadastro.setText("Ops! Funcionário já cadastrado!");
 
         TextFieldNome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -107,19 +111,19 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("Código ");
+        LabelCod.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelCod.setText("Código ");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel5.setText("Nome ");
+        LabelNome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelNome.setText("Nome ");
 
         TextFieldTitulacao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("Salário ");
+        LabelSalario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelSalario.setText("Salário ");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setText("Nível");
+        LabelNivel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelNivel.setText("Nível");
 
         ComboBoxNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "D1", "D2", "D3" }));
         ComboBoxNivel.addActionListener(new java.awt.event.ActionListener() {
@@ -128,8 +132,8 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel8.setText("Titulação");
+        LabelTitulacao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelTitulacao.setText("Titulação");
 
         TextFieldSalario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         TextFieldSalario.addActionListener(new java.awt.event.ActionListener() {
@@ -138,13 +142,13 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel9.setText("Área");
+        LabelArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelArea.setText("Área");
 
         TextFieldArea.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setText("Departamento");
+        LabelDep.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelDep.setText("Departamento");
 
         ComboBoxDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,43 +164,42 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelDep)
+                            .addComponent(ComboBoxDep, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                            .addComponent(ButtonCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelNome))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
+                                    .addComponent(LabelNivel)
                                     .addComponent(ComboBoxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextFieldTitulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
+                                    .addComponent(LabelTitulacao)
+                                    .addComponent(TextFieldTitulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
+                                    .addComponent(LabelArea)
                                     .addComponent(TextFieldArea)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TextFieldNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
+                                            .addComponent(LabelCod)
                                             .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(TextFieldSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel6)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(37, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(ComboBoxDep, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(LabelSalario))))))
+                        .addGap(37, 37, 37))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(105, 105, 105)
                 .addComponent(LabelCadastro)
@@ -207,23 +210,23 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelCod)
+                    .addComponent(LabelSalario)
+                    .addComponent(LabelDep, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextFieldSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ComboBoxDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelTitulacao, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelArea, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,32 +249,30 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         String salario = TextFieldSalario.getText();
         String titulacao = TextFieldTitulacao.getText();
         String area = TextFieldArea.getText();
-        String nivel = (String)ComboBoxNivel.getSelectedItem();
-        String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
+        String nivel = (String) ComboBoxNivel.getSelectedItem();
+        String dep = controller.buscarDepartamentoNome((String) ComboBoxDep.getSelectedItem()).getCodigo();
         String[] values = {codigo, nome, salario, titulacao, area, dep};
-        if(Utils.hasNull(values)){
+        if (Utils.hasNull(values)) {
             JOptionPane.showMessageDialog(this, "Todos os campos precisam ser preenchidos!",
-                "Atenção", JOptionPane.WARNING_MESSAGE);
-        }
-        else if(!Utils.isFloat(salario)){
+                    "Atenção", JOptionPane.WARNING_MESSAGE);
+        } else if (!Utils.isFloat(salario)) {
             JOptionPane.showMessageDialog(this, "Salário precisa ser um valor numérico!",
-                "Atenção", JOptionPane.WARNING_MESSAGE);
+                    "Atenção", JOptionPane.WARNING_MESSAGE);
             TextFieldSalario.setText("");
+        } else {
+            controller.addEfetivo(codigo, nome, Double.parseDouble(salario), nivel, titulacao, area, dep);
+            TextFieldCodigo.setText("");
+            TextFieldNome.setText("");
+            TextFieldSalario.setText("");
+            TextFieldTitulacao.setText("");
+            TextFieldArea.setText("");
+            JOptionPane.showMessageDialog(this, "Docente cadastrado com sucesso!",
+                    "Cadastrado", JOptionPane.INFORMATION_MESSAGE);
         }
-        else{
-           controller.addEfetivo(codigo, nome, Double.parseDouble(salario), nivel, titulacao, area, dep);
-           TextFieldCodigo.setText("");
-           TextFieldNome.setText("");
-           TextFieldSalario.setText("");
-           TextFieldTitulacao.setText("");
-           TextFieldArea.setText("");
-           JOptionPane.showMessageDialog(this, "Docente cadastrado com sucesso!",
-                "Cadastrado", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
+
     }//GEN-LAST:event_ButtonCadastroActionPerformed
 
-    
+
     private void ComboBoxNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxNivelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxNivelActionPerformed
@@ -291,25 +292,47 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
     private void TextFieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusLost
         // TODO add your handling code here:
         String codigo = TextFieldCodigo.getText();
-        String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
-        Efetivo E = (Efetivo)controller.getFuncionario(dep, codigo);
-        if(E != null){
+        String dep = controller.buscarDepartamentoNome((String) ComboBoxDep.getSelectedItem()).getCodigo();
+        Funcionario F = controller.getFuncionario(dep, codigo);
+        if (F != null) {
             LabelCadastro.setVisible(true);
-            TextFieldCodigo.setText(E.getCodigo());
-            TextFieldNome.setText(E.getNome());
-            TextFieldSalario.setText(Float.toString((float) E.getSalario()));
-            TextFieldTitulacao.setText(E.getTitulacao());
-            TextFieldArea.setText(E.getArea());
-            ComboBoxNivel.getModel().setSelectedItem(E.getNivel());
+            TextFieldCodigo.setText(F.getCodigo());
+            TextFieldNome.setText(F.getNome());
+            TextFieldSalario.setText(Float.toString((float) F.getSalario()));
+            ComboBoxNivel.getModel().setSelectedItem(F.getNivel());
             ButtonCadastro.setEnabled(false);
+            if (F instanceof Efetivo) {
+                Efetivo E = (Efetivo) F;
+                TextFieldTitulacao.setText(E.getTitulacao());
+                TextFieldArea.setText(E.getArea());
+            } else if (F instanceof Substituto) {
+                Substituto S = (Substituto) F;
+                TextFieldTitulacao.setText(S.getTitulacao());
+                LabelArea.setText("Carga Horária");
+                TextFieldArea.setText(Integer.toString(S.getCargaHoraria()));
+            } else if (F instanceof Tecnico) {
+                Tecnico T = (Tecnico) F;
+                LabelArea.setEnabled(false);
+                TextFieldArea.setEnabled(false);
+                LabelTitulacao.setText("Função");
+                TextFieldTitulacao.setText(T.getFuncao());
+            }
         }
     }//GEN-LAST:event_TextFieldCodigoFocusLost
 
     private void TextFieldCodigoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusGained
         // TODO add your handling code here:
-        TextFieldCodigo.setText("");
+        LabelArea.setEnabled(true);
+        TextFieldArea.setEnabled(true);
+        LabelArea.setText("Área");
         ButtonCadastro.setEnabled(true);
         LabelCadastro.setVisible(false);
+        LabelTitulacao.setText("Titulacao");
+        TextFieldCodigo.setText("");
+        TextFieldNome.setText("");
+        TextFieldSalario.setText("");
+        TextFieldTitulacao.setText("");
+        TextFieldArea.setText("");
     }//GEN-LAST:event_TextFieldCodigoFocusGained
 
     /**
@@ -358,18 +381,18 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
     private javax.swing.JButton ButtonCadastro;
     private javax.swing.JComboBox<String> ComboBoxDep;
     private javax.swing.JComboBox<String> ComboBoxNivel;
+    private javax.swing.JLabel LabelArea;
     private javax.swing.JLabel LabelCadastro;
+    private javax.swing.JLabel LabelCod;
+    private javax.swing.JLabel LabelDep;
+    private javax.swing.JLabel LabelNivel;
+    private javax.swing.JLabel LabelNome;
+    private javax.swing.JLabel LabelSalario;
+    private javax.swing.JLabel LabelTitulacao;
     private javax.swing.JTextField TextFieldArea;
     private javax.swing.JTextField TextFieldCodigo;
     private javax.swing.JTextField TextFieldNome;
     private javax.swing.JTextField TextFieldSalario;
     private javax.swing.JTextField TextFieldTitulacao;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

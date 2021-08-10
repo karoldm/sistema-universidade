@@ -1,7 +1,10 @@
 
 package Interface.Utils;
 
-import javax.swing.JTextField;
+import Modelo.Efetivo;
+import Modelo.Funcionario;
+import Modelo.Substituto;
+import Modelo.Tecnico;
 
 /**
  *

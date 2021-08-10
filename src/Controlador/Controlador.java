@@ -66,4 +66,33 @@ public class Controlador {
         return universidade.dadosDepartamentosFaixaSalarial(salarioInicial, salarioFinal);
     }
     
+    public Funcionario buscarFuncionarioCodigo(String codigo){
+        return universidade.buscarFuncionarioCodigo(codigo);
+    }
+  
+    public Funcionario buscarFuncionarioNome(String nome){
+        return universidade.buscarFuncionarioNome(nome);
+    }
+    
+    public String buscarFuncionarioFaixaSalarial(double salarioInicial, double salarioFinal){
+        return universidade.buscarFuncionarioFaixaSalarial(salarioInicial, salarioFinal);
+    }
+    
+    public String exibirDocentes() {
+        return universidade.exibirDocentes();
+    }
+    
+    public String exibirEfetivos(){
+        return universidade.exibirEfetivos();
+    }
+    
+    public String exibirSubstituto(){
+        return universidade.exibirSubstituto();
+    }
+    
+    public String exibirTecnicos() {
+        return universidade.exibirTecnicos();
+    }
+    
+    
 }

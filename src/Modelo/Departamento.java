@@ -45,7 +45,31 @@ public class Departamento {
         return relatorio;
     }
    
+    public Funcionario buscarFuncionarioCodigo(String codigo){
+        Funcionario funcionario = dbf.buscarFuncionarioCodigo(codigo);
+        if (funcionario != null) {
+            return funcionario;
+        }
+        return null;     
+    }
     
+    public Funcionario buscarFuncionarioNome(String nome){
+        Funcionario funcionario = dbf.buscarFuncionarioNome(nome);
+        if (funcionario != null) {
+            return funcionario;
+        }
+        return null;     
+    }
+    
+    public Funcionario buscarFuncionarioFaixaSalarial(double salarioInicial, double salarioFinal){
+        Funcionario funcionario = dbf.buscarFuncionarioFaixaSalarial(salarioInicial,salarioFinal);
+        if (funcionario != null) {
+            return funcionario;
+        }
+        return null; 
+        
+   }
+ 
     public double gastoTotal() {
         return dbf.calcularSalarioTotal();
     }
@@ -57,8 +81,9 @@ public class Departamento {
     }
     
     public void addEfetivo(String codigo, String nome, double salario, String nivel, String titulacao, String area){
-        Efetivo e = new Efetivo(codigo, nome, salario, nivel, titulacao, area);
-        dbf.addFuncionario(e);
+        Efetivo e = new Efetivo(codigo, nome, salario, nivel, titulacao, area);      
+        dbf.addFuncionario(e);   
+        
     }
     
     public void addSubstituto(String codigo, String nome, double salario, String nivel, String titulacao, int cargaHoraria){
@@ -71,6 +96,26 @@ public class Departamento {
         return (Departamento) super.clone();
     }
 
+    public String exibirDocentes() {
+        String relatorio = dbf.exibirDocentes();
+        return relatorio;
+    }
+    
+    public String exibirEfetivos(){
+        String relatorio = dbf.exibirEfetivo();
+        return relatorio;
+    }
+    
+    public String exibirSubstituto(){
+        String relatorio = dbf.exibirSubstituto();
+        return relatorio;
+    }
+    
+    public String exibirTecnicos() {
+       String relatorio = dbf.exibirTecnicos();
+       return relatorio;
+    }
+    
     public String getCodigo() {
         return codigo;
     }

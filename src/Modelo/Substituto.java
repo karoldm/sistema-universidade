@@ -22,14 +22,13 @@ public class Substituto extends Docente{
     }
     
     @Override
-    public double calcularSalario(){
+    public void calcularSalario(){
         if (nivel.equals("S1")){
             salario = salario*Constantes.S1;
         }
         else{
             salario = salario*Constantes.S2;
-        }
-        return salario;
+        }     
     }
     
     @Override

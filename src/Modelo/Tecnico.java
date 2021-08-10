@@ -22,14 +22,14 @@ public class Tecnico extends Funcionario{
     }
     
     @Override
-    public double calcularSalario(){
+    public void calcularSalario(){
         if (nivel.equals("T1")){
             salario = salario*Constantes.T1;
         }
         else{
             salario = salario*Constantes.T2;
         }
-        return salario;
+        
     }
     
     @Override

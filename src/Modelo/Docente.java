@@ -22,7 +22,7 @@ public abstract class Docente extends Funcionario{
     }   
     
     @Override
-    public abstract double calcularSalario();
+    public abstract void calcularSalario();
 
     public String getTitulacao() {
         return titulacao;

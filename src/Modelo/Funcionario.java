@@ -25,7 +25,7 @@ public abstract class Funcionario {
         this.nivel = nivel;
     }
     
-    public abstract double calcularSalario();
+    public abstract void calcularSalario();
     
     public abstract String dadosFuncionario();
 

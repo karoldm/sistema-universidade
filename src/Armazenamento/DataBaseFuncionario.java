@@ -6,6 +6,10 @@
 package Armazenamento;
 
 import Modelo.Funcionario;
+import Modelo.Docente;
+import Modelo.Efetivo;
+import Modelo.Substituto;   
+import Modelo.Tecnico;
 
 /**
  *
@@ -38,11 +42,12 @@ public final class DataBaseFuncionario {
         return this.cont;
     }
     
-    public void addFuncionario(Funcionario d){
+    public void addFuncionario(Funcionario f){
         if(cont < MAX){
-            funcionarios[cont] = d;
+            funcionarios[cont] = f;
             cont++;
         }
+        f.calcularSalario();
     }
     
     public Funcionario buscarFuncionarioCodigo(String codigo){
@@ -63,11 +68,64 @@ public final class DataBaseFuncionario {
         return null;
     }
     
+    public Funcionario buscarFuncionarioFaixaSalarial( double salarioInicial,double salarioFinal){
+        for(int i = 0; i < cont; i++){
+            if(funcionarios[i].getSalario() > salarioInicial){
+                if(funcionarios[i].getSalario()< salarioFinal){
+                    return funcionarios[i];
+                }
+            }        
+        }
+        return null;    
+    }
+    
     public double calcularSalarioTotal(){
         double total = 0;
         for (int i = 0; i < cont; i++) {
-            total += funcionarios[i].calcularSalario();
+            total += funcionarios[i].getSalario();
         }
         return total;
     }
+   
+    public String exibirDocentes() {
+        String relatorio = "";
+        for (int i = 0; i < cont; i++) {
+            if (funcionarios[i] instanceof Docente) {
+                relatorio = relatorio + funcionarios[i].dadosFuncionario();
+            }
+        }
+        return relatorio;
+    }
+        
+    public String exibirEfetivo() {
+        String relatorio = "";
+        for (int i = 0; i < cont; i++) {
+            if (funcionarios[i] instanceof Efetivo) {
+                relatorio = relatorio + funcionarios[i].dadosFuncionario();
+            }
+        }
+        return relatorio;
+    }
+    
+    public String exibirSubstituto() {
+        String relatorio = "";
+        for (int i = 0; i < cont; i++) {
+            if (funcionarios[i] instanceof Substituto) {
+                relatorio = relatorio + funcionarios[i].dadosFuncionario();
+            }
+        }
+        return relatorio;
+    }
+    
+    public String exibirTecnicos() {
+        String relatorio = "";
+        for (int i = 0; i < cont; i++) {
+            if (funcionarios[i] instanceof Tecnico) {
+                relatorio = relatorio + funcionarios[i].dadosFuncionario();
+            }
+        }
+        return relatorio;
+    }
+    
+    
 }
