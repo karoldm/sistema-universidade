@@ -38,6 +38,7 @@ public class UIBuscaDeptoNome extends javax.swing.JDialog {
         textRelatorio = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Buscar departamentos");
         setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

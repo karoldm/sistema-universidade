@@ -37,10 +37,17 @@ public class UIBuscaDepto extends javax.swing.JDialog {
         textRelatorio = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Buscar departamentos");
         setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Código do Departamento:");
+
+        textNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNumActionPerformed(evt);
+            }
+        });
 
         buttonExibir.setText("exibir");
         buttonExibir.addActionListener(new java.awt.event.ActionListener() {
@@ -63,12 +70,12 @@ public class UIBuscaDepto extends javax.swing.JDialog {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textNum, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(23, 23, 23)
+                        .addComponent(textNum, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(buttonExibir)
-                        .addGap(0, 141, Short.MAX_VALUE)))
+                        .addGap(0, 87, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,6 +107,10 @@ public class UIBuscaDepto extends javax.swing.JDialog {
             textRelatorio.setText(" ");
         }
     }//GEN-LAST:event_buttonExibirActionPerformed
+
+    private void textNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNumActionPerformed
 
     /**
      * @param args the command line arguments

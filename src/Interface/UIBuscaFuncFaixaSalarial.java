@@ -40,6 +40,7 @@ public class UIBuscaFuncFaixaSalarial extends javax.swing.JDialog {
         textRelatorio = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Buscar funcionarios");
         setResizable(false);
 
         jLabel1.setText("Salario Inicial:");
@@ -116,7 +117,7 @@ public class UIBuscaFuncFaixaSalarial extends javax.swing.JDialog {
       Double SFinal = Double.parseDouble(textFinal.getText());    
       
         Controlador control = new Controlador();
-        String relatorio = control.buscarFuncionarioFaixaSalarial(SInicial, SFinal);
+        String relatorio = control.buscarFuncionariosFaixaSalarial(SInicial, SFinal);
         textRelatorio.setText(relatorio);
         
         

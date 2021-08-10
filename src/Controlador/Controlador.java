@@ -74,8 +74,8 @@ public class Controlador {
         return universidade.buscarFuncionarioNome(nome);
     }
     
-    public String buscarFuncionarioFaixaSalarial(double salarioInicial, double salarioFinal){
-        return universidade.buscarFuncionarioFaixaSalarial(salarioInicial, salarioFinal);
+    public String buscarFuncionariosFaixaSalarial(double salarioInicial, double salarioFinal){
+        return universidade.buscarFuncionariosFaixaSalarial(salarioInicial, salarioFinal);
     }
     
     public String exibirDocentes() {

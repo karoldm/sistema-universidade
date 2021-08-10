@@ -45,6 +45,7 @@ public class UIBuscaDeptoFaixaSalarial extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Buscar departamentos");
         setResizable(false);
 
         jLabel3.setText("Salario Inicial:");

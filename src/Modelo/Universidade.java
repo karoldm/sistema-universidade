@@ -109,7 +109,7 @@ public class Universidade {
         return null;
     }
     
-    public String buscarFuncionarioFaixaSalarial(double salarioInicial,double salarioFinal){
+    public String buscarFuncionariosFaixaSalarial(double salarioInicial,double salarioFinal){
         String relatorio = "";
         Funcionario[] funcionarios;
         Departamento departamentos[] = dbd.getDepartamentos();
