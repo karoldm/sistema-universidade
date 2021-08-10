@@ -329,9 +329,6 @@ public class UICadastroTecnico extends javax.swing.JDialog {
         ButtonCadastro.setEnabled(true);
         LabelCadastro.setVisible(false);
         TextFieldCodigo.setText("");
-        TextFieldNome.setText("");
-        TextFieldSalario.setText("");
-        TextFieldFuncao.setText("");
     }//GEN-LAST:event_TextFieldCodigoFocusGained
 
     /**

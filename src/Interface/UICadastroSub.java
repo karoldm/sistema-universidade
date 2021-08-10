@@ -246,14 +246,10 @@ public class UICadastroSub extends javax.swing.JDialog {
         LabelCH.setEnabled(true);
         TextFieldCH.setEnabled(true);
         LabelCH.setText("Carga horária");
-        TextFieldCH.setText("");
         ButtonCadastro.setEnabled(true);
         LabelCadastro.setVisible(false);
         LabelTitulacao.setText("Titulação");
         TextFieldCodigo.setText("");
-        TextFieldNome.setText("");
-        TextFieldSalario.setText("");
-        TextFieldTitulacao.setText("");
     }//GEN-LAST:event_TextFieldCodigoFocusGained
 
     private void TextFieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusLost
