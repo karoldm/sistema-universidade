@@ -261,7 +261,7 @@ public class UICadastroTecnico extends javax.swing.JDialog {
         String funcao = TextFieldFuncao.getText();
         String nivel = (String)ComboBoxNivel.getSelectedItem();
         String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
-        String[] values = {codigo, nome, salario, funcao, dep};
+        String[] values = {codigo, nome, salario, funcao};
         if(Utils.hasNull(values)){
             JOptionPane.showMessageDialog(this, "Todos os campos precisam ser preenchidos!",
                 "Atenção", JOptionPane.WARNING_MESSAGE);
@@ -289,8 +289,7 @@ public class UICadastroTecnico extends javax.swing.JDialog {
     private void TextFieldCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TextFieldCodigoFocusLost
         // TODO add your handling code here:
         String codigo = TextFieldCodigo.getText();
-        String dep = controller.buscarDepartamentoNome((String)ComboBoxDep.getSelectedItem()).getCodigo();
-        Funcionario F = controller.getFuncionario(dep, codigo);
+        Funcionario F = controller.buscarFuncionarioCodigo(codigo);
         if (F != null) {
             LabelCadastro.setVisible(true);
             TextFieldCodigo.setText(F.getCodigo());
