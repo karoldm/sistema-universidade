@@ -302,7 +302,7 @@ public class UIHome extends javax.swing.JFrame {
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
-        relatorio.exibir("Relatório Funcionarios", "Relatório Funcionarios ", control.dadosTodosFuncionarios());
+        relatorio.exibir("Relatório Funcionários", "Relatório Funcionários ", control.dadosTodosFuncionarios());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -350,7 +350,7 @@ public class UIHome extends javax.swing.JFrame {
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
-        relatorio.exibir("Relatório Tecnico","Relatório Tecnico",control.exibirTecnicos());  
+        relatorio.exibir("Relatório Tecnico","Relatório Técnico",control.exibirTecnicos());  
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
