@@ -68,14 +68,18 @@ public final class DataBaseFuncionario {
         return null;
     }
     
-    public Funcionario buscarFuncionarioFaixaSalarial( double salarioInicial,double salarioFinal){
+    public Funcionario[] buscarFuncionariosFaixaSalarial( double salarioInicial,double salarioFinal){
+        Funcionario funcionariosArray[] = new Funcionario[cont];
+        int k = 0;
         for(int i = 0; i < cont; i++){
             if(funcionarios[i].getSalario() > salarioInicial){
                 if(funcionarios[i].getSalario()< salarioFinal){
-                    return funcionarios[i];
+                    funcionariosArray[k] = funcionarios[i];
+                    k++;
                 }
             }        
         }
+        if(funcionariosArray[0] != null) return funcionariosArray;
         return null;    
     }
     

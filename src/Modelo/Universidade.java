@@ -111,12 +111,16 @@ public class Universidade {
     
     public String buscarFuncionarioFaixaSalarial(double salarioInicial,double salarioFinal){
         String relatorio = "";
+        Funcionario[] funcionarios;
         Departamento departamentos[] = dbd.getDepartamentos();
         int cont = dbd.getNumDepartamentos();
         for(int i = 0; i < cont; i++){
-            Funcionario funcionario = departamentos[i].buscarFuncionarioFaixaSalarial(salarioInicial, salarioFinal);   
-             relatorio = relatorio + funcionario.dadosFuncionario();
-     
+            funcionarios = departamentos[i].buscarFuncionariosFaixaSalarial(salarioInicial, salarioFinal); 
+            if(funcionarios != null){
+                for (int j = 0; j < funcionarios.length && funcionarios[j] != null; j++) {
+                    relatorio = relatorio + funcionarios[j].dadosFuncionario();
+                }
+            }
         }
         return relatorio;
     }

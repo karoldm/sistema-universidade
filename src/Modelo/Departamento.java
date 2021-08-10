@@ -61,13 +61,12 @@ public class Departamento {
         return null;     
     }
     
-    public Funcionario buscarFuncionarioFaixaSalarial(double salarioInicial, double salarioFinal){
-        Funcionario funcionario = dbf.buscarFuncionarioFaixaSalarial(salarioInicial,salarioFinal);
-        if (funcionario != null) {
-            return funcionario;
+    public Funcionario[] buscarFuncionariosFaixaSalarial(double salarioInicial, double salarioFinal){
+        Funcionario[] funcionarios = dbf.buscarFuncionariosFaixaSalarial(salarioInicial,salarioFinal);
+        if (funcionarios != null) {
+            return funcionarios;
         }
-        return null; 
-        
+        return null;  
    }
  
     public double gastoTotal() {

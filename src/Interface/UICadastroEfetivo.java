@@ -327,7 +327,7 @@ public class UICadastroEfetivo extends javax.swing.JDialog {
         LabelArea.setText("Área");
         ButtonCadastro.setEnabled(true);
         LabelCadastro.setVisible(false);
-        LabelTitulacao.setText("Titulacao");
+        LabelTitulacao.setText("Titulação");
         TextFieldCodigo.setText("");
         TextFieldNome.setText("");
         TextFieldSalario.setText("");

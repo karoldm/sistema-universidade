@@ -249,7 +249,7 @@ public class UICadastroSub extends javax.swing.JDialog {
         TextFieldCH.setText("");
         ButtonCadastro.setEnabled(true);
         LabelCadastro.setVisible(false);
-        LabelTitulacao.setText("Titulacao");
+        LabelTitulacao.setText("Titulação");
         TextFieldCodigo.setText("");
         TextFieldNome.setText("");
         TextFieldSalario.setText("");
@@ -276,7 +276,7 @@ public class UICadastroSub extends javax.swing.JDialog {
             } else if (F instanceof Substituto) {
                 Substituto S = (Substituto) F;
                 TextFieldTitulacao.setText(S.getTitulacao());
-                LabelCH.setText("Carga Horária");
+                LabelCH.setText("Carga horária");
                 TextFieldCH.setText(Integer.toString(S.getCargaHoraria()));
             } else if (F instanceof Tecnico) {
                 Tecnico T = (Tecnico) F;

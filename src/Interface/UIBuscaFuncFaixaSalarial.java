@@ -40,11 +40,10 @@ public class UIBuscaFuncFaixaSalarial extends javax.swing.JDialog {
         textRelatorio = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Salario Inicial:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Salario Final:");
 
         textInicial.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +83,7 @@ public class UIBuscaFuncFaixaSalarial extends javax.swing.JDialog {
                                 .addComponent(textFinal)))
                         .addGap(18, 18, 18)
                         .addComponent(buttonExibir)
-                        .addGap(0, 149, Short.MAX_VALUE)))
+                        .addGap(0, 199, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,7 +99,7 @@ public class UIBuscaFuncFaixaSalarial extends javax.swing.JDialog {
                     .addComponent(textFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonExibir))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
