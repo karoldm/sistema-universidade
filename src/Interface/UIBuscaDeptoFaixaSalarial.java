@@ -61,6 +61,8 @@ public class UIBuscaDeptoFaixaSalarial extends javax.swing.JDialog {
 
         textRelatorio.setColumns(20);
         textRelatorio.setRows(5);
+        textRelatorio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        textRelatorio.setEnabled(false);
         jScrollPane2.setViewportView(textRelatorio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

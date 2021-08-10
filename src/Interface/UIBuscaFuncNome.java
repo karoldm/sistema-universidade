@@ -54,6 +54,8 @@ public class UIBuscaFuncNome extends javax.swing.JDialog {
 
         textRelatorio.setColumns(20);
         textRelatorio.setRows(5);
+        textRelatorio.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        textRelatorio.setEnabled(false);
         jScrollPane1.setViewportView(textRelatorio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,14 +93,17 @@ public class UIBuscaFuncNome extends javax.swing.JDialog {
 
     private void buttonExibirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExibirActionPerformed
         // TODO add your handling code here:
-        String nome = (textNome.getText());
+        String nome = textNome.getText();
         Controlador control = new Controlador();
         Funcionario f = control.buscarFuncionarioNome(nome);
+        System.out.println(f);
         if(f != null){
-            String relatorio= f.dadosFuncionario();
+            String relatorio = f.dadosFuncionario();
             textRelatorio.setText(relatorio);            
         }    
-        
+        else {
+            textRelatorio.setText(""); 
+        }
     }//GEN-LAST:event_buttonExibirActionPerformed
 
     /**

@@ -100,11 +100,14 @@ public class Universidade {
     }
     
     public Funcionario buscarFuncionarioNome(String nome){
+        Funcionario funcionario;
         Departamento departamentos[] = dbd.getDepartamentos();
         int cont = dbd.getNumDepartamentos();
         for(int i = 0; i < cont; i++){
-            Funcionario funcionario = departamentos[i].buscarFuncionarioNome(nome);   
-            return funcionario;
+            funcionario = departamentos[i].buscarFuncionarioNome(nome);   
+            if(funcionario != null ){
+                return funcionario;
+            }
         }
         return null;
     }
