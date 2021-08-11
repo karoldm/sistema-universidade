@@ -97,6 +97,8 @@ public class Universidade {
             funcionario = departamentos[i].buscarFuncionarioCodigo(codigo);   
             if(funcionario != null) {
                 return funcionario;
+                //como no cadastro estamos garantido que códigos iguais nunca existam 
+                //o primeiro funcionário encontrado com o código dado será o único
             }
         }
         return null;
@@ -117,7 +119,7 @@ public class Universidade {
     
     public String buscarFuncionariosFaixaSalarial(double salarioInicial,double salarioFinal){
         String relatorio = "";
-        Funcionario[] funcionarios;
+        Funcionario[] funcionarios; //podem haver mais de um funcionário na faixa especificada
         Departamento departamentos[] = dbd.getDepartamentos();
         int cont = dbd.getNumDepartamentos();
         for(int i = 0; i < cont; i++){
