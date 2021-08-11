@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Modelo;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -11,6 +12,7 @@ package Modelo;
  */
 public class Substituto extends Docente{
     private int cargaHoraria;
+    private DecimalFormat formatador = new DecimalFormat("0.00");
     
     public Substituto(){
         super();
@@ -33,7 +35,7 @@ public class Substituto extends Docente{
     
     @Override
     public String dadosFuncionario(){
-        String dados = "Nome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + salario + "\nNível: " + nivel
+        String dados = "Nome: " + nome +"\nCódigo: "+ codigo +"\nSalário: " + formatador.format(salario) + "\nNível: " + nivel
                 + "\nTitulação: "+ titulacao + "\nCarga horário: "+ cargaHoraria+"\n\n";   
         return dados;
     }
