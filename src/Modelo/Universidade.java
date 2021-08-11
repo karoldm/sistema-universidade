@@ -123,6 +123,7 @@ public class Universidade {
         for(int i = 0; i < cont; i++){
             funcionarios = departamentos[i].buscarFuncionariosFaixaSalarial(salarioInicial, salarioFinal); 
             if(funcionarios != null){
+                relatorio = relatorio + "Departamento de " + departamentos[i].getNome() + "\n";
                 for (int j = 0; j < funcionarios.length && funcionarios[j] != null; j++) {
                     relatorio = relatorio + funcionarios[j].dadosFuncionario();
                 }
