@@ -31,7 +31,6 @@ public class Tecnico extends Funcionario{
         else{
             salario = salario*Constantes.T2;
         }
-        
     }
     
     @Override

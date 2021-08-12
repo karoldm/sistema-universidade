@@ -6,6 +6,7 @@
 package Modelo;
 
 import Armazenamento.DataBaseFuncionario;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -16,7 +17,8 @@ public class Departamento {
     private String codigo;
     private String nome;
     private DataBaseFuncionario dbf = new DataBaseFuncionario();
-
+    private DecimalFormat formatador = new DecimalFormat("0.00");
+    
     public Departamento(String codigo, String nome) {
         this.codigo = codigo;
         this.nome = nome;
@@ -32,7 +34,7 @@ public class Departamento {
         int numFuncionario = dbf.getNumFuncionarios();
         double totalGasto = dbf.calcularSalarioTotal();
         String dados = "\nNome: " + nome + "\nNúmero de Funcionário: " + numFuncionario
-                + "\nGasto total com funcionários: " + totalGasto + "\n";
+                + "\nGasto total com funcionários: " + formatador.format(totalGasto) + "\n";
         return dados;
     }
 
