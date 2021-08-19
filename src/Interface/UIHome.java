@@ -36,23 +36,23 @@ public class UIHome extends javax.swing.JFrame {
         MenuAddTecnico = new javax.swing.JMenuItem();
         MenuAddSub = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MenuRelatDep = new javax.swing.JMenuItem();
+        MenuRelatTec = new javax.swing.JMenu();
+        MenuRelatFunGeral = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        MenuRelatDocGeral = new javax.swing.JMenuItem();
+        MenuRelatEfetivo = new javax.swing.JMenuItem();
+        MenuRelatSub = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        MenuBuscarFunFaixa = new javax.swing.JMenuItem();
+        MenuBuscarFunNome = new javax.swing.JMenuItem();
+        MenuBuscarFunCod = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        MenuBuscarDepFaixa = new javax.swing.JMenuItem();
+        MenuBuscarDepNome = new javax.swing.JMenuItem();
+        MenuBuscarDepCod = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -114,29 +114,29 @@ public class UIHome extends javax.swing.JFrame {
         jMenu3.setText("Relatórios");
         jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenuItem4.setText("Departamentos");
-        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatDep.setText("Departamentos");
+        MenuRelatDep.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MenuRelatDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                MenuRelatDepActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem4);
+        jMenu3.add(MenuRelatDep);
 
-        jMenu1.setText("Funcionários");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatTec.setText("Funcionários");
+        MenuRelatTec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                MenuRelatTecActionPerformed(evt);
             }
         });
 
-        jMenuItem2.setText("Geral");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatFunGeral.setText("Geral");
+        MenuRelatFunGeral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                MenuRelatFunGeralActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        MenuRelatTec.add(MenuRelatFunGeral);
 
         jMenuItem1.setText("Tecnico");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,37 +144,37 @@ public class UIHome extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        MenuRelatTec.add(jMenuItem1);
 
         jMenu5.setText("Docentes");
 
-        jMenuItem3.setText("Geral");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatDocGeral.setText("Geral");
+        MenuRelatDocGeral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                MenuRelatDocGeralActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        jMenu5.add(MenuRelatDocGeral);
 
-        jMenuItem5.setText("Efetivos");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatEfetivo.setText("Efetivos");
+        MenuRelatEfetivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                MenuRelatEfetivoActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem5);
+        jMenu5.add(MenuRelatEfetivo);
 
-        jMenuItem8.setText("Substitutos");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        MenuRelatSub.setText("Substitutos");
+        MenuRelatSub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                MenuRelatSubActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem8);
+        jMenu5.add(MenuRelatSub);
 
-        jMenu1.add(jMenu5);
+        MenuRelatTec.add(jMenu5);
 
-        jMenu3.add(jMenu1);
+        jMenu3.add(MenuRelatTec);
 
         jMenuBar1.add(jMenu3);
 
@@ -183,57 +183,57 @@ public class UIHome extends javax.swing.JFrame {
 
         jMenu6.setText("Funcionarios");
 
-        jMenuItem9.setText("Faixa Salarial");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarFunFaixa.setText("Faixa Salarial");
+        MenuBuscarFunFaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                MenuBuscarFunFaixaActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem9);
+        jMenu6.add(MenuBuscarFunFaixa);
 
-        jMenuItem7.setText("Nome");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarFunNome.setText("Nome");
+        MenuBuscarFunNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                MenuBuscarFunNomeActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem7);
+        jMenu6.add(MenuBuscarFunNome);
 
-        jMenuItem10.setText("Código");
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarFunCod.setText("Código");
+        MenuBuscarFunCod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
+                MenuBuscarFunCodActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem10);
+        jMenu6.add(MenuBuscarFunCod);
 
         jMenu4.add(jMenu6);
 
         jMenu7.setText("Departamento");
 
-        jMenuItem11.setText("Faixa Salarial");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarDepFaixa.setText("Faixa Salarial");
+        MenuBuscarDepFaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                MenuBuscarDepFaixaActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem11);
+        jMenu7.add(MenuBuscarDepFaixa);
 
-        jMenuItem13.setText("Nome");
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarDepNome.setText("Nome");
+        MenuBuscarDepNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
+                MenuBuscarDepNomeActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem13);
+        jMenu7.add(MenuBuscarDepNome);
 
-        jMenuItem12.setText("Código");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        MenuBuscarDepCod.setText("Código");
+        MenuBuscarDepCod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                MenuBuscarDepCodActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem12);
+        jMenu7.add(MenuBuscarDepCod);
 
         jMenu4.add(jMenu7);
 
@@ -263,13 +263,13 @@ public class UIHome extends javax.swing.JFrame {
    
     }//GEN-LAST:event_MenuDepActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void MenuRelatDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatDepActionPerformed
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
         relatorio.exibir("Relatório Departamentos", "Relatório Departamentos ", control.dadosTodosDepartamentos());
         
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_MenuRelatDepActionPerformed
 
     private void MenuAddEfetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAddEfetivoActionPerformed
         UICadastroEfetivo CadastroEfetivo = new UICadastroEfetivo(this, true);
@@ -298,53 +298,53 @@ public class UIHome extends javax.swing.JFrame {
         CadastroSub.setVisible(true);
     }//GEN-LAST:event_MenuAddSubActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void MenuRelatFunGeralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatFunGeralActionPerformed
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
         relatorio.exibir("Relatório Funcionários", "Relatório Funcionários ", control.dadosTodosFuncionarios());
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_MenuRelatFunGeralActionPerformed
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void MenuRelatTecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatTecActionPerformed
         // TODO add your handling code here:
        
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_MenuRelatTecActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+    private void MenuBuscarDepNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarDepNomeActionPerformed
         // TODO add your handling code here:
         UIBuscaDeptoNome buscaDeptoNome = new UIBuscaDeptoNome(this, false);
         buscaDeptoNome.setVisible(true);
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+    }//GEN-LAST:event_MenuBuscarDepNomeActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+    private void MenuBuscarDepFaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarDepFaixaActionPerformed
         // TODO add your handling code here:
-        UIBuscaDeptoFaixaSalarial buscaFaixaSalarial = new UIBuscaDeptoFaixaSalarial(this,true);
+        UIBuscaDeptoFaixaSalarial buscaFaixaSalarial = new UIBuscaDeptoFaixaSalarial(this,false );
         buscaFaixaSalarial.setVisible(true);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    }//GEN-LAST:event_MenuBuscarDepFaixaActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    private void MenuBuscarDepCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarDepCodActionPerformed
         // TODO add your handling code here:
-        UIBuscaDepto buscadepto = new UIBuscaDepto(this,true);
+        UIBuscaDepto buscadepto = new UIBuscaDepto(this,false);
         buscadepto.setVisible(true);
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
+    }//GEN-LAST:event_MenuBuscarDepCodActionPerformed
 
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    private void MenuBuscarFunCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarFunCodActionPerformed
         // TODO add your handling code here:
-        UIBuscaFuncCodigo buscaFuncionarioCodigo = new UIBuscaFuncCodigo(this,true);
+        UIBuscaFuncCodigo buscaFuncionarioCodigo = new UIBuscaFuncCodigo(this,false);
         buscaFuncionarioCodigo.setVisible(true);
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
+    }//GEN-LAST:event_MenuBuscarFunCodActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void MenuBuscarFunNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarFunNomeActionPerformed
         // TODO add your handling code here:
-        UIBuscaFuncNome buscaFuncionarioNome = new UIBuscaFuncNome(this,true);
+        UIBuscaFuncNome buscaFuncionarioNome = new UIBuscaFuncNome(this,false);
         buscaFuncionarioNome.setVisible(true);
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_MenuBuscarFunNomeActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void MenuBuscarFunFaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuBuscarFunFaixaActionPerformed
         // TODO add your handling code here:
-        UIBuscaFuncFaixaSalarial buscaFucionarioFaixaSalarial = new UIBuscaFuncFaixaSalarial(this,true);
+        UIBuscaFuncFaixaSalarial buscaFucionarioFaixaSalarial = new UIBuscaFuncFaixaSalarial(this,false);
         buscaFucionarioFaixaSalarial.setVisible(true);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_MenuBuscarFunFaixaActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -353,26 +353,26 @@ public class UIHome extends javax.swing.JFrame {
         relatorio.exibir("Relatório Tecnico","Relatório Técnico",control.exibirTecnicos());  
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void MenuRelatDocGeralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatDocGeralActionPerformed
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
         relatorio.exibir("Relatório Docentes","Relatório Docentes",control.exibirDocentes());  
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_MenuRelatDocGeralActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void MenuRelatEfetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatEfetivoActionPerformed
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
         relatorio.exibir("Relatório Efetivos","Relatório Efetivos",control.exibirEfetivos());  
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_MenuRelatEfetivoActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void MenuRelatSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuRelatSubActionPerformed
         // TODO add your handling code here:
         UIRelatorio relatorio = new UIRelatorio(this, false);
         Controlador control = new Controlador();
         relatorio.exibir("Relatório Substituto","Relatório Substituto",control.exibirSubstituto());  
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+    }//GEN-LAST:event_MenuRelatSubActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,9 +414,20 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuAddEfetivo;
     private javax.swing.JMenuItem MenuAddSub;
     private javax.swing.JMenuItem MenuAddTecnico;
+    private javax.swing.JMenuItem MenuBuscarDepCod;
+    private javax.swing.JMenuItem MenuBuscarDepFaixa;
+    private javax.swing.JMenuItem MenuBuscarDepNome;
+    private javax.swing.JMenuItem MenuBuscarFunCod;
+    private javax.swing.JMenuItem MenuBuscarFunFaixa;
+    private javax.swing.JMenuItem MenuBuscarFunNome;
     private javax.swing.JMenu MenuDep;
+    private javax.swing.JMenuItem MenuRelatDep;
+    private javax.swing.JMenuItem MenuRelatDocGeral;
+    private javax.swing.JMenuItem MenuRelatEfetivo;
+    private javax.swing.JMenuItem MenuRelatFunGeral;
+    private javax.swing.JMenuItem MenuRelatSub;
+    private javax.swing.JMenu MenuRelatTec;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -425,16 +436,5 @@ public class UIHome extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
